@@ -1,0 +1,31 @@
+<head>
+  <link rel="alternate" type="application/rss+xml" title="My blog title" href="/rss/posts">
+</head>
+
+<template name="header">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">Portfolio</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a href="news">News</a>
+          </li>
+          <li>
+            <a href="{{blogPathFor "blogIndex"}}">Blog</a>
+          </li>
+          {{#if currentUser}}
+          <li>
+            <a href="{{blogPathFor "blogAdmin"}}">Admin Area (must login)</a>
+          </li>
+          {{/if}}
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {{> loginButtons}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
